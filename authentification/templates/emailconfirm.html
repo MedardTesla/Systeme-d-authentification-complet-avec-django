@@ -1,0 +1,7 @@
+{% autoescape off %}
+Bienvenu sur medard tesla
+bonjour {{ name }}
+Confirmer votre addresse email en clickant sur le lien suivant
+
+lien: https://{{domain}}{% url 'activate' uidb64=uid token=token %}
+{% endautoescape %}

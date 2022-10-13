@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h4> S'engeristrer ici </h4>
+{% for message in messages %}
+   <strong> {{message}}</strong>
+{% endfor %}
+<form method="post" action="">
+    {% csrf_token %}
+    <label for="username"> Username</label>
+    <input type="text" name="username", id="username" placeholder="Entrer votre nom d'utilisateur " required>
+    <br>
+    <br>
+    <label for="email">Email</label>
+    <input type="email" name="email", id="email" placeholder="Entrer votre email" required>
+    <br>
+    <br>
+    <label for="password"> Password</label>
+    <input type="password" name="password", id="password" placeholder="Entrer votre mot de pass" required>
+    <br>
+    <br>
+    <label for="password"> Confiramation</label>
+    <input type="password" name="password1", id="password" placeholder="Confirmer votre mot de pass" required>
+    <br>
+    <br>
+    <button type="submit"> Engeristrer</button>
+</form>
+
+{% endblock %}

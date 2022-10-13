@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for message in messages %}
+    <strong>{{message}}</strong>
+{% endfor %}
+{% if user.is_authenticated %}
+<h3>  Bienvenu monsieur {{ firstname }} </h3>
+<button type="submit"> <a href="/logout"> Se deconnecter </a></button>
+{% else %}
+<button type="submit"> <a href="/signup"> S'engeristrer </a></button>
+<button type="submit"> <a href="/signin"> Se coonecter  </a></button>
+{% endif %}
+
+
+{% endblock %}
